@@ -1,4 +1,4 @@
-package org.manager.taskorganizer.model;
+package org.manager.taskorganizer.model.tasks;
 
 import java.time.LocalDateTime;
 

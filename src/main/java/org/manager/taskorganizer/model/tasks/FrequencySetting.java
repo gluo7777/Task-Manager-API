@@ -1,4 +1,4 @@
-package org.manager.taskorganizer.model;
+package org.manager.taskorganizer.model.tasks;
 
 import org.manager.taskorganizer.constants.Frequency;
 import org.manager.taskorganizer.constants.Strategy;

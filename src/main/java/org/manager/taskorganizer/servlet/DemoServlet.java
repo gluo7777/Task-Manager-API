@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.manager.taskorganizer.model.Account;
-import org.manager.taskorganizer.model.Task;
+import org.manager.taskorganizer.model.accounts.Account;
+import org.manager.taskorganizer.model.tasks.Task;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

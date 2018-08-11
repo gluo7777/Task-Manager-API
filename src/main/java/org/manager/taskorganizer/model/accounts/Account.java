@@ -1,4 +1,4 @@
-package org.manager.taskorganizer.model;
+package org.manager.taskorganizer.model.accounts;
 
 public class Account {
 	private long id;
