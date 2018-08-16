@@ -7,4 +7,5 @@ public final class Util {
 	}
 
 	public static final LogUtil LOG = LogUtil.INSTANCE;
+	public static final JsonUtil JSON = JsonUtil.INSTANCE;
 }

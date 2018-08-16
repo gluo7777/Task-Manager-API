@@ -4,11 +4,31 @@
 <!-- Note: Context-Path is defined by the server -->
 <web-app>
 	<display-name>Web service to retrieve task information for a user.</display-name>
+	<!-- General Information -->
 	<context-param>
 		<param-name>Developer</param-name>
 		<param-value>William Luo</param-value>
 		<description>Developer for Task Organizer App</description>
 	</context-param>
+	<!-- datasource properties -->
+	<!-- Modify after staging -->
+	<context-param>
+		<param-name>datasource.username</param-name>
+		<param-value>{placeholderforusername}</param-value>
+		<description>JDBC Username</description>
+	</context-param>
+	<context-param>
+		<param-name>datasource.password</param-name>
+		<param-value>{placeholderforpassword}</param-value>
+		<description>JDBC password</description>
+	</context-param>
+	<context-param>
+		<param-name>datasource.url</param-name>
+		<param-value>{placeholderforurl}</param-value>
+		<description>JDBC url</description>
+	</context-param>
+	<!-- Configured Servlets -->
+	<!-- Demo Servlet - TODO: Disable in production -->
 	<servlet>
 		<servlet-name>DemoServlet</servlet-name>
 		<servlet-class>org.manager.taskorganizer.servlet.DemoServlet</servlet-class>

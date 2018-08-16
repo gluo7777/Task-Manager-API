@@ -2,6 +2,8 @@ package org.manager.taskorganizer.servlet;
 
 import java.time.LocalDateTime;
 
+import org.manager.taskorganizer.util.Util;
+
 public class ErrorResponse {
 	private LocalDateTime timestamp;
 	private String servletName;
@@ -19,24 +21,31 @@ public class ErrorResponse {
 		return timestamp;
 	}
 
-	public final void setTimestamp(LocalDateTime timestamp) {
+	public final ErrorResponse setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
+		return this;
 	}
 
 	public final String getServletName() {
 		return servletName;
 	}
 
-	public final void setServletName(String servletName) {
+	public final ErrorResponse setServletName(String servletName) {
 		this.servletName = servletName;
+		return this;
 	}
 
 	public final String getMessage() {
 		return message;
 	}
 
-	public final void setMessage(String message) {
+	public final ErrorResponse setMessage(String message) {
 		this.message = message;
+		return this;
+	}
+	
+	public String toJson() {
+		return Util.JSON.toJson(this);
 	}
 
 }

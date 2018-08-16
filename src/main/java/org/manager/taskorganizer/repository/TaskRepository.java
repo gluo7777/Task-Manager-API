@@ -3,6 +3,7 @@ package org.manager.taskorganizer.repository;
 import java.util.List;
 import java.util.Locale.Category;
 
+import org.manager.taskorganizer.exception.DefaultHandler;
 import org.manager.taskorganizer.model.tasks.Note;
 import org.manager.taskorganizer.model.tasks.Task;
 
@@ -35,7 +36,9 @@ public interface TaskRepository {
 	 * @param userId
 	 * @return
 	 */
-	List<Task> getTasksForUser(long userId);
+	default public List<Task> getTasksForUser(long userId){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * 
@@ -43,14 +46,18 @@ public interface TaskRepository {
 	 * @param taskIds can be null or a list of task ids to query for
 	 * @return list of notes
 	 */
-	List<Note> getNotesForUserAndTasks(long userId, long...taskIds);
+	default public List<Note> getNotesForUserAndTasks(long userId, long...taskIds){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * 
 	 * @param taskId
 	 * @return all Categories mapped to taskId
 	 */
-	List<Category> getCategoriesForTask(long taskId);
+	default public List<Category> getCategoriesForTask(long taskId){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * Adds a list of tasks for userId
@@ -58,7 +65,9 @@ public interface TaskRepository {
 	 * @param tasks
 	 * @return true if all tasks added successfully, else false
 	 */
-	boolean addTasksForUser(long userId, Task...tasks);
+	default public boolean addTasksForUser(long userId, Task...tasks){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * Deletes a list of tasks based on their id for userId
@@ -66,7 +75,9 @@ public interface TaskRepository {
 	 * @param taskIds
 	 * @return true if all tasks deleted successfully, else false
 	 */
-	boolean deleteTasksForUser(long userId, long...taskIds);
+	default public boolean deleteTasksForUser(long userId, long...taskIds){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * Updates a list of tasks based on their id for userId
@@ -74,5 +85,7 @@ public interface TaskRepository {
 	 * @param tasks
 	 * @return true if all tasks updated successfully, else false
 	 */
-	boolean updateTasksForUser(long userId, Task...tasks);
+	default public boolean updateTasksForUser(long userId, Task...tasks){
+		throw DefaultHandler.notSupported();
+	}
 }

@@ -5,4 +5,8 @@ public enum Status {
 	public String getSqlName() {
 		return this.name().toLowerCase();
 	}
+	
+	public static Status fromSqlName(String name) {
+		return Status.valueOf(name.toUpperCase());
+	}
 }
