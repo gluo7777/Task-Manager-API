@@ -2,6 +2,7 @@ package org.manager.taskorganizer.repository;
 
 import java.util.List;
 
+import org.manager.taskorganizer.exception.DefaultHandler;
 import org.manager.taskorganizer.model.accounts.Account;
 import org.manager.taskorganizer.model.accounts.Category;
 import org.manager.taskorganizer.model.accounts.View;
@@ -18,35 +19,25 @@ public interface AccountRepository {
 	 * @param username
 	 * @return
 	 */
-	Account getAccountForUser(String username);
+	default public Account getAccountForUser(String username) {
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * Retrieves Views (Lists) mapped to an userId
 	 * @param userId
 	 * @return
 	 */
-	List<View> getViewsForUserId(long userId);
+	default public List<View> getViewsForUserId(long userId){
+		throw DefaultHandler.notSupported();
+	}
 	
 	/**
 	 * Retrieves Categories mapped to an userId
 	 * @param userId
 	 * @return
 	 */
-	List<Category> getCategoriesForUserId(long userId);
-	
-	/**
-	 * Adds categories for an userId
-	 * @param categories
-	 * @param userId
-	 * @return
-	 */
-	boolean addCategoriesForUserId(long userId, Category...categories);
-	
-	/**
-	 * Adds views for an userId
-	 * @param views
-	 * @param userId
-	 * @return
-	 */
-	boolean addAccountViewsForUserId(long userId, View...views);
+	default public List<Category> getCategoriesForUserId(long userId){
+		throw DefaultHandler.notSupported();
+	}
 }

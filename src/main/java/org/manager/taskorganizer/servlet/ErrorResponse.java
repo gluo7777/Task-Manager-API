@@ -10,6 +10,8 @@ public class ErrorResponse {
 	private String message;
 
 	public ErrorResponse() {}
+	
+	public static ErrorResponse build() {return new ErrorResponse(null,null);}
 
 	public ErrorResponse(String servletName, String message) {
 		this.timestamp = LocalDateTime.now();
